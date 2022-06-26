@@ -97,7 +97,7 @@ The ``` Me.CenterToScreen()  ``` is that the programm is in the middle of the sc
 
 ```    
 Private Const WS_EX_TRANSPARENT As Integer = &H20
-
+```
     Protected Overrides ReadOnly Property CreateParams() As System.Windows.Forms.CreateParams
         Get
             Dim cp As CreateParams = MyBase.CreateParams
