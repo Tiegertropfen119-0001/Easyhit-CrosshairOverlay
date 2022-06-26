@@ -8,6 +8,61 @@ End Sub
 This is for the slider to set the normal value to 15
 
 ```
+  Private Sub MetroButton3_Click_1(sender As Object, e As EventArgs) Handles MetroButton3.Click
+        hitmaker.Show()
+    End Sub
+ ```
+This is the button to start the maker
+
+```
+  Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+        Try
+            hitmaker.Dispose()
+        Catch ex As Exception
+
+        End Try
+
+        Try
+
+            OpenFileDialog1.Title = "Please select a file"
+            OpenFileDialog1.InitialDirectory = "c:"
+            OpenFileDialog1.Filter = "Png |*.png |Jpeg|*.jpg|Show all|*.*"
+            OpenFileDialog1.ShowDialog()
+            PictureBox1.ImageLocation = OpenFileDialog1.FileName.ToString
+            PictureBox1.Visible = True
+
+        Catch ex As Exception
+            MsgBox("Failed to load")
+        End Try
+
+
+    End Sub
+
+
+```
+This is the code to load coustom picture files as maker
+```
+   Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
+        Try
+            hitmaker.Dispose()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+   
+   ```
+This is the code to close the maker
+```
+    Private Sub MetroTrackBar1_Scroll(sender As Object, e As ScrollEventArgs) Handles MetroTrackBar1.Scroll
+        TextBox1.Text = MetroTrackBar1.Value
+    End Sub
+    ```
+To sync the value from the slider to the textbox
+
+```
+
+
     Private Sub hitmaker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -52,3 +107,23 @@ Private Const WS_EX_TRANSPARENT As Integer = &H20
     End Property
  ```
 This code is that your mouse is hidden and when you click on the maker that you not minimize the game
+
+```
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Me.TopMost = True
+        Me.CenterToScreen()
+    End Sub
+    
+ ```
+This is to make sure that the maker is always on top on the game
+
+```
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        PictureBox1.Width = Form1.TextBox1.Text
+        PictureBox1.Height = Form1.TextBox1.Text
+        Me.Width = Form1.TextBox1.Text
+        Me.Height = Form1.TextBox1.Text
+    End Sub
+```
+This is to sync the size of the maker from the GUI
+
