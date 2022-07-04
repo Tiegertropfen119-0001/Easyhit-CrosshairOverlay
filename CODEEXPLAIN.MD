@@ -96,7 +96,7 @@ The ``` Me.TopMost = True  ``` is that the programm is the current selected wind
 The ``` Me.CenterToScreen()  ``` is that the programm is in the middle of the screen
 
 ```    
-Private Const WS_EX_TRANSPARENT As Integer = &H20
+
 ```
     Protected Overrides ReadOnly Property CreateParams() As System.Windows.Forms.CreateParams
         Get
